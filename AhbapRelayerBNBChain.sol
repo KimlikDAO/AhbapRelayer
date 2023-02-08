@@ -22,7 +22,7 @@ interface IERC721 {
     ) external payable;
 }
 
-// The top 8 tokens on BNB Chain by market cap according to bscscan.com
+// The top 7 tokens on BNB Chain by market cap according to bscscan.com
 IERC20 constant WETH = IERC20(0x2170Ed0880ac9A755fd29B2688956BD959F933F8);
 IERC20 constant BSCUSD = IERC20(0x55d398326f99059fF775485246999027B3197955);
 IERC20 constant WBNB = IERC20(0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c);
@@ -30,7 +30,6 @@ IERC20 constant USDC = IERC20(0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d);
 IERC20 constant anyUSDC = IERC20(0x8965349fb649A33a30cbFDa057D8eC2C48AbE2A2);
 IERC20 constant XRP = IERC20(0x1D2F0da169ceB9fC7B3144628dB156f3F6c60dBE);
 IERC20 constant BUSD = IERC20(0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56);
-IERC20 constant ADA = IERC20(0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47);
 
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_BNBCHAIN`.
@@ -59,7 +58,6 @@ contract AhbapRelayerBNBChain {
         anyUSDC.transfer(AHBAP_BNBCHAIN, anyUSDC.balanceOf(address(this)));
         XRP.transfer(AHBAP_BNBCHAIN, XRP.balanceOf(address(this)));
         BUSD.transfer(AHBAP_BNBCHAIN, BUSD.balanceOf(address(this)));
-        ADA.transfer(AHBAP_BNBCHAIN, ADA.balanceOf(address(this)));
     }
 
     /**
