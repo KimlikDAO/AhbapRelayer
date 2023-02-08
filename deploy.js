@@ -45,7 +45,7 @@ const deployToChain = async (chainId, privKey) => {
   console.log(`📜 Contract:      ${deployedAddress}`);
   console.log(`🧮 Nonce:         ${nonce}, ${nonce == 0 ? "👍" : "👎"}`)
 
-  console.log(`🌀 Compiling...   TCKT for ${chainId} and address ${deployedAddress}`);
+  console.log(`🌀 Compiling...   AhbapRelayer for ${chainId} and address ${deployedAddress}`);
   const chainName = ChainData[chainId][3];
   const compilerInput = JSON.stringify({
     language: "Solidity",
@@ -73,17 +73,20 @@ const deployToChain = async (chainId, privKey) => {
   const output = solc.compile(compilerInput);
   /** @const {!Object} */
   const solcJson = JSON.parse(output);
-  const TCKT = solcJson.contracts["AhbapRelayer.sol"]["AhbapRelayer"];
-  console.log(`📏 Binary size:   ${TCKT.evm.bytecode.object.length / 2} bytes`);
+  const AhbapRelayer = solcJson.contracts["AhbapRelayer.sol"]["AhbapRelayer"];
+  console.log(`📏 Binary size:   ${AhbapRelayer.evm.bytecode.object.length / 2} bytes`);
 
   const feeData = await provider.getFeeData();
   console.log(`🏭 Factory:       👍`);
   console.log(`⛽️ Gas price:     ${feeData.gasPrice / 1_000_000_000n}`);
+  
   console.log(feeData);
+  
   if (feeData.maxPriorityFeePerGas)
     console.log(`🫙  Max priority:  ${feeData.maxPriorityFeePerGas / 1_000_000_000n}`);
 
-  const factory = new ethers.ContractFactory(TCKT.abi, TCKT.evm.bytecode.object, wallet);
+  console.log(AhbapRelayer.abi);
+  const factory = new ethers.ContractFactory(AhbapRelayer.abi, AhbapRelayer.evm.bytecode.object, wallet);
   const deployTx = await factory.getDeployTransaction();
 
   /** @const {!bigint} */
@@ -96,10 +99,6 @@ const deployToChain = async (chainId, privKey) => {
     `($${usdValue})        assuming 🪙  = $${tokenPrice}`);
 
   if (nonce != 0) return;
-  const contract = await factory.deploy({
-    maxFeePerGas: 25_000_000_000n,
-    maxPriorityFeePerGas: 1_000_000_000n
-  })
 }
 
-deployToChain("0x1", "");
+deployToChain("0xa86a", "");

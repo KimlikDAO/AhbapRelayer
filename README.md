@@ -1,4 +1,4 @@
-## AhbapRelayer: Single address to donate to Ahbap, valid on all chains
+## AhbapRelayer: Single address to donate to Ahbap, valid on Ethereum, Avalanche C-chain, BNB chain, more on the way.
 
 Donate to [Ahbap](https://twitter.com/ahbap) using a single addresss:
 
