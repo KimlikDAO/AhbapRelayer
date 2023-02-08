@@ -22,7 +22,8 @@ interface IERC721 {
     ) external payable;
 }
 
-// The top 8 tokens on Ethereum by market cap according to etherscan.io
+// The top 8 tokens created by create() on Ethereum by market cap according
+// to etherscan.io
 IERC20 constant USDT = IERC20(0xdAC17F958D2ee523a2206206994597C13D831ec7);
 IERC20 constant BNB = IERC20(0xB8c77482e45F1F44dE1745F52C74426C631bDD52);
 IERC20 constant USDC = IERC20(0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48);
@@ -30,7 +31,7 @@ IERC20 constant BUSD = IERC20(0x4Fabb145d64652a948d72533023f6E7A623C7C53);
 IERC20 constant OKB = IERC20(0x75231F58b43240C9718Dd58B4967c5114342a86c);
 IERC20 constant MATIC = IERC20(0x7D1AfA7B718fb893dB30A3aBc0Cfc608AaCfeBB0);
 IERC20 constant SHIB = IERC20(0x95aD61b0a150d79219dCF64E1E6Cc01f0B64C4cE);
-IERC20 constant stETH = IERC20(0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84);
+IERC20 constant HEX = IERC20(0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39);
 
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_ETHEREUM`.
@@ -59,7 +60,7 @@ contract AhbapRelayerEthereum {
         OKB.transfer(AHBAP_ETHEREUM, OKB.balanceOf(address(this)));
         MATIC.transfer(AHBAP_ETHEREUM, MATIC.balanceOf(address(this)));
         SHIB.transfer(AHBAP_ETHEREUM, SHIB.balanceOf(address(this)));
-        stETH.transfer(AHBAP_ETHEREUM, stETH.balanceOf(address(this)));
+        HEX.transfer(AHBAP_ETHEREUM, HEX.balanceOf(address(this)));
     }
 
     /**

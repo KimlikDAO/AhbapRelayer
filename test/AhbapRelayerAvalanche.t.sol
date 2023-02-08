@@ -3,7 +3,7 @@
 pragma solidity 0.8.18;
 
 import "forge-std/Test.sol";
-import "./MockERC20.sol";
+import {MockERC20} from "./MockERC20.sol";
 import "../AhbapRelayerAvalanche.sol";
 
 address constant USDTe_DEPLOYER = 0x50Ff3B278fCC70ec7A9465063d68029AB460eA04;
@@ -15,8 +15,8 @@ address constant BUSD_DEPLOYER = 0xf537880c505BfA7cdA6c8c49D7efa53D45b52D40;
 address constant SHIBe_DEPLOYER = USDTe_DEPLOYER;
 address constant WAVAX_DEPLOYER = 0x808cE8deC9E10beD8d0892aCEEf9F1B8ec2F52Bd;
 
-address constant AHBAP_RELAYER_DEPLOYER = 0x5A0c9eE857D79b9740024127F4a78F8ac0722995;
-address constant AHBAP_RELAYER = 0xcCc0c2eED12d517c7bCe777Cf966bFECAEEF2cCc;
+address constant AHBAP_RELAYER_DEPLOYER = 0xF370bc2B249f0CFA542F607a91B08A0207B5BD82;
+address constant AHBAP_RELAYER = 0xABAB0cdBf16118f0FE9433e9B66Ce995E0D273c5;
 
 contract AhbapRelayerAvalancheTest is Test {
     AhbapRelayerAvalanche relayer;
