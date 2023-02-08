@@ -4,7 +4,7 @@ pragma solidity 0.8.18;
 
 import "forge-std/Test.sol";
 import {MockERC20} from "./MockERC20.sol";
-import "../AhbapRelayerBNBCHain.sol";
+import "../AhbapRelayerBNBChain.sol";
 
 address constant WETH_DEPLOYER = 0x88eFdaC29E3Ba290512E26c04908692Ae9810566;
 address constant BSCUSD_DEPLOYER = 0x970609bA2C160a1b491b90867681918BDc9773aF;
