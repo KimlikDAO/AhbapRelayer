@@ -35,8 +35,10 @@ IERC20 constant HEX = IERC20(0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39);
 
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_ETHEREUM`.
+ *
+ * https://github.com/KimlikDAO/AhbapRelayer
  */
-contract AhbapRelayerEthereum {
+contract AhbapRelayer {
     receive() external payable {}
 
     function sweepNativeToken() external {

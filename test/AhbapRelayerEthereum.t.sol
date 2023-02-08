@@ -15,11 +15,11 @@ address constant MATIC_DEPLOYER = 0x78655080b65f42E2ceE5FA5673689CC44D4E1cFC;
 address constant SHIB_DEPLOYER = 0xB8f226dDb7bC672E27dffB67e4adAbFa8c0dFA08;
 address constant HEX_DEPLOYER = 0x896f23373667274e8647b99033c2a8461ddD98CC;
 
-address constant AHBAP_RELAYER_DEPLOYER = 0x5A0c9eE857D79b9740024127F4a78F8ac0722995;
-address constant AHBAP_RELAYER = 0xcCc0c2eED12d517c7bCe777Cf966bFECAEEF2cCc;
+address constant AHBAP_RELAYER_DEPLOYER = 0xF370bc2B249f0CFA542F607a91B08A0207B5BD82;
+address constant AHBAP_RELAYER = 0xABAB0cdBf16118f0FE9433e9B66Ce995E0D273c5;
 
 contract AhbapRelayerEthereumTest is Test {
-    AhbapRelayerEthereum relayer;
+    AhbapRelayer relayer;
 
     function deploy(
         address deployer,
@@ -39,7 +39,7 @@ contract AhbapRelayerEthereumTest is Test {
 
     function setUp() public {
         vm.prank(AHBAP_RELAYER_DEPLOYER);
-        relayer = new AhbapRelayerEthereum();
+        relayer = new AhbapRelayer();
         assertEq(address(relayer), AHBAP_RELAYER);
 
         deploy(USDT_DEPLOYER, USDT, 6, 6, 10, "USDT");

@@ -19,7 +19,7 @@ address constant AHBAP_RELAYER_DEPLOYER = 0xF370bc2B249f0CFA542F607a91B08A0207B5
 address constant AHBAP_RELAYER = 0xABAB0cdBf16118f0FE9433e9B66Ce995E0D273c5;
 
 contract AhbapRelayerAvalancheTest is Test {
-    AhbapRelayerAvalanche relayer;
+    AhbapRelayer relayer;
 
     function deploy(
         address deployer,
@@ -39,7 +39,7 @@ contract AhbapRelayerAvalancheTest is Test {
 
     function setUp() public {
         vm.prank(AHBAP_RELAYER_DEPLOYER);
-        relayer = new AhbapRelayerAvalanche();
+        relayer = new AhbapRelayer();
         assertEq(address(relayer), AHBAP_RELAYER);
 
         deploy(BUSDe_DEPLOYER, BUSDe, 95, 18, 14, "BUSD.e");

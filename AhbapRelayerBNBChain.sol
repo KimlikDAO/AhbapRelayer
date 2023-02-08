@@ -34,7 +34,7 @@ IERC20 constant BUSD = IERC20(0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56);
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_BNBCHAIN`.
  */
-contract AhbapRelayerBNBChain {
+contract AhbapRelayer {
     receive() external payable {}
 
     function sweepNativeToken() external {

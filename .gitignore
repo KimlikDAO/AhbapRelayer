@@ -1,3 +1,6 @@
 .vscode
+*.lock
+*.verify.json
 cache/
+node_modules/
 out/
