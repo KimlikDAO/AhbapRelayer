@@ -34,7 +34,6 @@ IERC20 constant ADA = IERC20(0x3EE2200Efb3400fAbB9AacF31297cBdD1d435D47);
 
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_BNBCHAIN`.
- * There is limited support for NFTs, proceed with caution.
  */
 contract AhbapRelayerBNBChain {
     receive() external payable {}

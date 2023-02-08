@@ -34,7 +34,6 @@ IERC20 constant stETH = IERC20(0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84);
 
 /**
  * Sends all BNB and ERC-20 tokens sent to this address to `AHBAP_ETHEREUM`.
- * There is limited support for NFTs, proceed with caution.
  */
 contract AhbapRelayerEthereum {
     receive() external payable {}
