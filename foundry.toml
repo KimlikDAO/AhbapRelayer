@@ -1,0 +1,4 @@
+[profile.default]
+src = './'
+optimizer = true
+optimizer_runs = 100000
